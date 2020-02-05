@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Search O Pedia</string>
+    <string name="search_users_hint">Search Users</string>
+</resources>
