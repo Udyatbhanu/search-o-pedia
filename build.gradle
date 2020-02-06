@@ -15,7 +15,8 @@ buildscript {
             okhttp          : '4.2.1',
             junit           : '4.12',
             androidxJunit   : '1.1.1',
-            espresso        : '3.2.0'
+            espresso        : '3.2.0',
+            glide           : '4.11.0'
     ]
     repositories {
         google()

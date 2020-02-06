@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import android.view.*
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.slack.exercise.R
 import com.slack.exercise.model.UserSearchResult
 import dagger.android.support.DaggerFragment
@@ -86,6 +87,7 @@ class UserSearchFragment : DaggerFragment(), UserSearchContract.View {
             layoutManager = LinearLayoutManager(activity).apply {
                 orientation = LinearLayoutManager.VERTICAL
             }
+//            addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
             setHasFixedSize(true)
         }
     }
