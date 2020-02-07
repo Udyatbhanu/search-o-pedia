@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar
 import android.view.*
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.slack.exercise.R
+import com.slack.exercise.core.framework.BaseFragment
 import com.slack.exercise.model.UserSearchResult
 import dagger.android.support.DaggerFragment
 import kotterknife.bindView
@@ -18,7 +19,7 @@ import javax.inject.Inject
  * Main fragment displaying and handling interactions with the view.
  * We use the MVP pattern and attach a Presenter that will be in charge of non view related operations.
  */
-class UserSearchFragment : DaggerFragment(), UserSearchContract.View {
+class UserSearchFragment : BaseFragment(), UserSearchContract.View {
     private val toolbar: Toolbar by bindView(R.id.toolbar)
     private val userSearchResultList: RecyclerView by bindView(R.id.user_search_result_list)
 

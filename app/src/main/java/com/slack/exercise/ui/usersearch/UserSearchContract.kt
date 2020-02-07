@@ -1,5 +1,6 @@
 package com.slack.exercise.ui.usersearch
 
+import com.slack.exercise.core.framework.BaseContract
 import com.slack.exercise.model.UserSearchResult
 
 /**
@@ -10,7 +11,7 @@ interface UserSearchContract {
     /**
      * Callbacks to notify the view of the outcome of search queries initiated.
      */
-    interface View {
+    interface  View: BaseContract.View {
         /**
          * Call when [UserSearchResult] are returned.
          */
@@ -22,16 +23,8 @@ interface UserSearchContract {
         fun onUserSearchError(error: Throwable)
     }
 
-    interface Presenter {
-        /**
-         * Call to attach a [Presenter] and provide its [View].
-         */
-        fun attach(view: View)
+    interface Presenter : BaseContract.Presenter<View> {
 
-        /**
-         * Call to detach a [Presenter] and clean up resources.
-         */
-        fun detach()
 
         /**
          * Notifies the presenter that the [searchTerm] has changed.
