@@ -12,6 +12,8 @@ import javax.inject.Singleton
 @Singleton
 class UserSearchResultDataProviderImpl @Inject constructor(private val slackApi: SlackApi) : UserSearchResultDataProvider {
 
+
+
     /**
      * Returns a [Single] emitting a set of [UserSearchResult].
      */
