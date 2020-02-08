@@ -2,14 +2,20 @@
 <resources>
     <dimen name="toolbar_height">48dp</dimen>
     <dimen name="item_margin">16dp</dimen>
-<!--    <dimen name="item_margin_v">8dp</dimen>-->
 
     <dimen name="size_8dp">8dp</dimen>
+
+    <dimen name="size_16dp">16dp</dimen>
 
     <dimen name="avatar_size">28dp</dimen>
 
     <dimen name="item_height">44dp</dimen>
     <dimen name="avatar_margin_end">12dp</dimen>
+
+    <dimen name="divider_height">0.5dp</dimen>
+
+    <dimen name="text_size16sp">16sp</dimen>
+    <dimen name="text_size12sp">12sp</dimen>
 
 
 </resources>

@@ -35,6 +35,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
 
+    implementation "jp.wasabeef:glide-transformations:4.0.1"
 
     //Glide for images
     implementation "com.github.bumptech.glide:glide:${versions.glide}"

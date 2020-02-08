@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+
+    <color name="backGround">#FFFFFF</color>
     <color name="displayNameColor">#1D1C1D</color>
     <color name="userNameColor">#616061</color>
+    <color name="dividerColor">#DDDDDD</color>
+
 </resources>

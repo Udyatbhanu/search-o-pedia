@@ -1,19 +1,20 @@
 package com.slack.exercise.ui.usersearch
 
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
-import android.view.*
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.slack.exercise.R
 import com.slack.exercise.core.framework.BaseFragment
 import com.slack.exercise.model.UserSearchResult
-import dagger.android.support.DaggerFragment
 import kotterknife.bindView
 import timber.log.Timber
 import javax.inject.Inject
+
 
 /**
  * Main fragment displaying and handling interactions with the view.
@@ -29,6 +30,7 @@ class UserSearchFragment : BaseFragment(), UserSearchContract.View {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_user_search, container, false)
+
         setHasOptionsMenu(true)
         return view
     }
@@ -36,7 +38,14 @@ class UserSearchFragment : BaseFragment(), UserSearchContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpToolbar()
-        setUpList()
+
+        val horizontalDecoration = DividerItemDecoration(context,
+                DividerItemDecoration.VERTICAL)
+        val horizontalDivider = ContextCompat.getDrawable(activity!!, R.drawable.horizontal_divider)
+        horizontalDecoration.setDrawable(horizontalDivider!!)
+
+
+        setUpList(horizontalDecoration)
     }
 
     override fun onStart() {
@@ -82,13 +91,18 @@ class UserSearchFragment : BaseFragment(), UserSearchContract.View {
         act.setSupportActionBar(toolbar)
     }
 
-    private fun setUpList() {
+    private fun setUpList(horizontalDecoration: DividerItemDecoration) {
+
+
+
+
         with(userSearchResultList) {
             adapter = UserSearchAdapter()
             layoutManager = LinearLayoutManager(activity).apply {
                 orientation = LinearLayoutManager.VERTICAL
             }
-//            addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
+
+            addItemDecoration(horizontalDecoration)
             setHasFixedSize(true)
         }
     }

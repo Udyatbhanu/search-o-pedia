@@ -7,6 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions.bitmapTransform
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
+
 import com.slack.exercise.R
 import com.slack.exercise.model.UserSearchResult
 import kotlinx.android.synthetic.main.item_user_search.view.*
@@ -35,7 +38,21 @@ class UserSearchAdapter : RecyclerView.Adapter<UserSearchAdapter.UserSearchViewH
         holder.displayName.text = userSearchResults[position].displayName
         holder.username.text = userSearchResults[position].username
 
-        Glide.with(holder.avatar.context).load(userSearchResults[position].avatarUrl).into(holder.avatar)
+        Glide.with(holder.avatar.context)
+                .asBitmap()
+                .load(userSearchResults[position].avatarUrl)
+                .centerCrop()
+                .apply(
+                        bitmapTransform(
+                                RoundedCornersTransformation(
+                            8,
+                            0,
+                            RoundedCornersTransformation.CornerType.ALL
+                        )
+
+                 )
+                )
+                .into(holder.avatar)
 
     }
 
