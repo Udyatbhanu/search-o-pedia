@@ -32,10 +32,4 @@ abstract class AppModule {
     abstract fun provideValidator(validator: BlackListTextValidatorImpl): BlackListTextValidator
 
 
-    @Binds
-    abstract fun provideFileAccess(fileAccess: FileAccessProviderImpl): FileAccessProvider
-
-
-
-
 }

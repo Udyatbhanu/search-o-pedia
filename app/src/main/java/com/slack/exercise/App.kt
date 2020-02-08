@@ -21,29 +21,11 @@ class App : DaggerApplication() {
             Timber.plant(Timber.DebugTree())
         }
 
-//        try {
-//            val inputStream: InputStream = resources.openRawResource(R.raw.blacklist)
-//
-//            val inputStreamReader = InputStreamReader(inputStream)
-//            val sb = StringBuilder()
-//            var line: String?
-//            val br = BufferedReader(inputStreamReader)
-//            line = br.readLine()
-//            while (br.readLine() != null) {
-//                sb.append(line)
-//                line = br.readLine()
-//            }
-//            br.close()
-//        } catch (e:Exception){
-//            Timber.e(e, e.toString())
-//        }
+
 
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-//        return DaggerAppComponent.create()
-
-//        DaggerAppComponent.builder().application(this).build()
 
         return DaggerAppComponent.builder().application(this).build()
     }

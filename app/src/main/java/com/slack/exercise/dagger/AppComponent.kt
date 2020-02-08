@@ -2,6 +2,7 @@ package com.slack.exercise.dagger
 
 import android.app.Application
 import com.slack.exercise.core.dagger.CoreModule
+import com.slack.exercise.core.dagger.NetworkModule
 import com.slack.exercise.dataprovider.UserSearchResultDataProvider
 import com.slack.exercise.ui.dagger.BindingModule
 import dagger.BindsInstance
@@ -16,7 +17,7 @@ import javax.inject.Singleton
  * Component providing Application scoped instances.
  */
 @Singleton
-@Component(modules = [AppModule::class, AndroidInjectionModule::class, BindingModule::class, CoreModule::class])
+@Component(modules = [AppModule::class, AndroidInjectionModule::class, BindingModule::class, CoreModule::class, NetworkModule::class])
 interface AppComponent : AndroidInjector<DaggerApplication> {
     fun userSearchResultDataProvider(): UserSearchResultDataProvider
 
