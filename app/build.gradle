@@ -56,4 +56,9 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
     androidTestImplementation "androidx.test:runner:${versions.jxrules}"
     androidTestImplementation "androidx.test:rules:${versions.jxrules}"
+
+    //Mockito
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockitoKotlin}"
+    testImplementation "org.mockito:mockito-inline:${versions.mockitoInline}"
+
 }

@@ -68,4 +68,12 @@ class TrieImpl  @Inject constructor(): Trie {
         return currentNode.word == null
     }
 
+
+    /**
+     *
+     */
+    override fun clean(){
+        size = 0
+        root.childNodes.clear()
+    }
 }

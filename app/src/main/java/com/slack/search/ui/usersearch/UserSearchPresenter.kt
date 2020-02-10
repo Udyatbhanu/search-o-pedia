@@ -31,7 +31,7 @@ class UserSearchPresenter @Inject constructor(
 
         searchQueryDisposable = searchQuerySubject
                 .flatMapSingle { searchTerm ->
-                    if (searchTerm.isEmpty()  || validator.isBlackListed(searchTerm)) {
+                    if ( validator.isBlackListed(searchTerm)) {
                         Single.just(emptySet())
                     } else {
                         userNameResultDataProvider.fetchUsers(searchTerm)
@@ -49,7 +49,7 @@ class UserSearchPresenter @Inject constructor(
 
     }
 
-    private fun onResult(resultSet :Set<UserSearchResult>) {
+     fun onResult(resultSet :Set<UserSearchResult>) {
         if(resultSet.isEmpty()){
             validator.blackListTerm(query)
 
