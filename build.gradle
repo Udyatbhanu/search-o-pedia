@@ -7,16 +7,17 @@ buildscript {
             recyclerview    : '1.1.0',
             appcompat       : '1.1.0',
             dagger          : '2.25.2',
-            kotterknife     : '0.1.0-SNAPSHOT',
             rx              : '2.4.0',
             rxAndroid       : '2.1.1',
             retrofit        : '2.6.2',
             timber          : '4.7.1',
             okhttp          : '4.2.1',
             junit           : '4.12',
+            jxrules         : '1.1.1',
             androidxJunit   : '1.1.1',
             espresso        : '3.2.0',
-            glide           : '4.11.0'
+            glide           : '4.11.0',
+            transformations: '4.0.1'
     ]
     repositories {
         google()

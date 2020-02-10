@@ -6,13 +6,14 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.slack.autocomplete"
+        applicationId "com.slack.search"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,19 +29,23 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:${versions.recyclerview}"
     implementation "io.reactivex.rxjava2:rxkotlin:${versions.rx}"
     implementation "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
-    implementation "com.jakewharton:kotterknife:${versions.kotterknife}"
     implementation "com.jakewharton.timber:timber:${versions.timber}"
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
     implementation "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
 
-    implementation "jp.wasabeef:glide-transformations:4.0.1"
+
 
     //Glide for images
     implementation "com.github.bumptech.glide:glide:${versions.glide}"
     annotationProcessor "com.github.bumptech.glide:compiler:${versions.glide}"
 
+
+    //Glide Transformations
+    implementation "jp.wasabeef:glide-transformations:${versions.transformations}"
+
+    //Dagger
     implementation "com.google.dagger:dagger:${versions.dagger}"
     kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
     kapt "com.google.dagger:dagger-android-processor:${versions.dagger}"
@@ -49,4 +54,6 @@ dependencies {
     testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:junit:${versions.androidxJunit}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+    androidTestImplementation "androidx.test:runner:${versions.jxrules}"
+    androidTestImplementation "androidx.test:rules:${versions.jxrules}"
 }
